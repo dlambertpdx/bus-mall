@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Josefin Sans', sans-serif;
+}

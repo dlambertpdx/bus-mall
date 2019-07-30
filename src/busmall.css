@@ -1,0 +1,32 @@
+body {
+    background-image: url('/assets/busMall.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#container {
+    background: rgba(95, 158, 160, .8);
+    border-radius: 30px;
+    max-height: 90vh;
+    justify-content: center;
+    padding: 20px;
+}
+
+#products {
+    display: flex;
+    border: 1px solid red;
+}
+
+.product-image {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+}
+
+
