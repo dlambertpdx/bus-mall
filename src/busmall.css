@@ -1,32 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline|Faster+One|Londrina+Shadow|Squada+One&display=swap');
+
 body {
     background-image: url('/assets/busMall.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 900px;
+    max-height: 100%;
     margin: 0 auto;
 }
 
 h1 {
+    font-family: 'Bungee Outline', cursive;
     text-align: center;
+    font-size: 5rem;
+    color: darkkhaki;
+    text-shadow: 0px 2px 2px rgba(7, 7, 7, 0.4); 
 }
 
-#container {
-    background: rgba(95, 158, 160, .8);
-    border-radius: 30px;
-    max-height: 90vh;
-    justify-content: center;
-    padding: 20px;
+a {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+a:hover {
+    text-decoration: none;
+    color: wheat;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: wheat;
 }
 
 #products {
     display: flex;
-    border: 1px solid red;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .product-image {
-    width: 270px;
-    height: 270px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
-}
-
-
+    border-radius: 15px;
+}  
