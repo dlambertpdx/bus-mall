@@ -1,13 +1,15 @@
 import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
+const displayProducts = document.querySelectorAll('.product-image');
+
 const products = store.getProducts();
 const masterProductSet = new ProductSet(products);
 let selectedProduct = null;
 
-loadProducts();
+renderProducts();
 
-function loadProducts() {
+function renderProducts() {
     let productSet = masterProductSet;
 
     if(selectedProduct && masterProductSet.list.length > 1) {
