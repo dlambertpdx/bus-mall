@@ -1,4 +1,6 @@
-import products from './products.js';
+import productData from './products.js';
+
+const PRODUCT_KEY = 'products';
 
 const store = {
     storage: window.localStorage,
@@ -10,6 +12,14 @@ const store = {
         const json = store.storage.getItem(key);
         const item = JSON.parse(json);
         return item;
+    },
+    getProducts() {
+        let products = store.get(PRODUCT_KEY);
+        if(!products) {
+            store.save(PRODUCT_KEY, productData);
+            products = productData;
+        }
+        return products;
     }
 
 };
