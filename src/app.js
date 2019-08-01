@@ -1,11 +1,15 @@
+/* eslint-disable no-console */
 import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
 const productButton = document.querySelectorAll('.product-button');
-console.log(productButton);
+const leftButton = document.getElementById('left-button');
+const centerButton = document.getElementById('center-button');
+const rightButton = document.getElementById('right-button');
 
 const products = store.getProducts();
 const masterProductSet = new ProductSet(products);
+
 let selectedProduct;
 let productToDisplay;
 let displayedProducts = {};
@@ -31,17 +35,30 @@ function renderProducts() {
 
     // generate 3 random product imgs to display
     for(let i = 0; i < 3; i++) {
-        // eslint-disable-next-line no-console
-        console.log([i]); // only gets first item in array :(
         let renderProduct = productSet.getRandomProduct();
-        console.log(productToDisplay); // only gets index[0] of array
         productToDisplay.push(renderProduct);
         tally(displayedProducts, renderProduct.id);
         productSet.removeById(renderProduct.id);
     
         // displaying image
-        let img = productButton[i].querySelector('img'); // will return a single random image if remove [i]
+        let img = productButton[i].querySelector('img'); 
         img.src = renderProduct.image;
     }
 }
+
+leftButton.addEventListener('click', event => {
+    event.preventDefault();
+    console.log('Left Button Clicked!');
+});
+
+centerButton.addEventListener('click', event => {
+    event.preventDefault();
+    console.log('Center Button Clicked!');
+});
+
+rightButton.addEventListener('click', event => {
+    event.preventDefault();
+    console.log('Right Button Clicked!');
+});
+
 renderProducts();

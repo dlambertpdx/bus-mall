@@ -15,3 +15,5 @@ function displayProduct(products, productDisplay) {
 }
 
 export default displayProduct;
+
+// DO I EVEN NEED THIS FILE???
