@@ -18,7 +18,6 @@ class ProductSet {
             const product = list[i];
             if(product.id === productId) {
                 list.splice(i, 1);
-                return;
             }
         }
     }

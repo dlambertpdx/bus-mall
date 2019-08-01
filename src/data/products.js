@@ -82,7 +82,7 @@ const products = [
     {
         id: 'usb',
         name: 'Wiggly USB',
-        image: 'assets/products/usb.jpg'
+        image: 'assets/products/usb.gif'
     },
     {
         id: 'water-can',
