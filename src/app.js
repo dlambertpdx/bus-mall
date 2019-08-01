@@ -1,7 +1,8 @@
 import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
-const productButton = document.querySelector('button[name=product]');
+const productButton = document.querySelectorAll('.product-button');
+console.log(productButton);
 
 const products = store.getProducts();
 const masterProductSet = new ProductSet(products);
@@ -31,8 +32,9 @@ function renderProducts() {
     // generate 3 random product imgs to display
     for(let i = 0; i < 3; i++) {
         // eslint-disable-next-line no-console
-        console.log([i]); // does not return array :(
+        console.log([i]); // only gets first item in array :(
         let renderProduct = productSet.getRandomProduct();
+        console.log(productToDisplay); // only gets index[0] of array
         productToDisplay.push(renderProduct);
         tally(displayedProducts, renderProduct.id);
         productSet.removeById(renderProduct.id);
