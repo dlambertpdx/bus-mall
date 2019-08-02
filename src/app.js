@@ -3,16 +3,26 @@ import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
 const productButton = document.querySelectorAll('.product-button');
-const leftButton = document.getElementById('left-button');
-const centerButton = document.getElementById('center-button');
-const rightButton = document.getElementById('right-button');
+
+
 
 const products = store.getProducts();
-const masterProductSet = new ProductSet(products);
-
-let selectedProduct;
+let masterProductSet = new ProductSet(products);
+const displayedProducts = {};
+let selectedProduct = {};
 let productToDisplay;
-let displayedProducts = {};
+
+// let turns = 0;
+
+// add event listener to buttons....
+for(let button of productButton){
+    button.addEventListener('click', event => {
+        event.preventDefault();
+        tally(selectedProduct, button.value);
+        console.log(selectedProduct);
+        renderProducts();
+    });
+}
 
 function tally(products, id) {
     if(products[id]) {
@@ -41,24 +51,28 @@ function renderProducts() {
         productSet.removeById(renderProduct.id);
     
         // displaying image
-        let img = productButton[i].querySelector('img'); 
+        let button = productButton[i];
+        button.value = renderProduct.id;
+        let img = button.querySelector('img'); 
         img.src = renderProduct.image;
+        img.alt = renderProduct.id;
     }
 }
 
-leftButton.addEventListener('click', event => {
-    event.preventDefault();
-    console.log('Left Button Clicked!');
-});
+// leftButton.addEventListener('click', event => {
+//     event.preventDefault();
+//     console.log('Left Button Clicked!');
+// });
 
-centerButton.addEventListener('click', event => {
-    event.preventDefault();
-    console.log('Center Button Clicked!');
-});
+// centerButton.addEventListener('click', event => {
+//     event.preventDefault();
+//     console.log('Center Button Clicked!');
+// });
 
-rightButton.addEventListener('click', event => {
-    event.preventDefault();
-    console.log('Right Button Clicked!');
-});
+// rightButton.addEventListener('click', event => {
+//     event.preventDefault();
+//     console.log('Right Button Clicked!');
+// });
+
 
 renderProducts();
