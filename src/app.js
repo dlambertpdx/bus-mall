@@ -1,10 +1,7 @@
-/* eslint-disable no-console */
 import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
 const productButton = document.querySelectorAll('.product-button');
-
-
 
 const products = store.getProducts();
 let masterProductSet = new ProductSet(products);
@@ -12,14 +9,11 @@ const displayedProducts = {};
 let selectedProduct = {};
 let productToDisplay;
 
-// let turns = 0;
-
 // add event listener to buttons....
 for(let button of productButton){
     button.addEventListener('click', event => {
         event.preventDefault();
         tally(selectedProduct, button.value);
-        console.log(selectedProduct);
         renderProducts();
     });
 }
