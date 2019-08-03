@@ -2,33 +2,23 @@ import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
 
 const productButton = document.querySelectorAll('.product-button');
+const buttonContainer = document.getElementById('product-options');
+const resultButton = document.getElementById('result-button');
 
 const products = store.getProducts();
 let masterProductSet = new ProductSet(products);
-const displayedProducts = {};
 let selectedProduct = {};
 let productToDisplay;
-
-// add event listener to buttons....
-for(let button of productButton){
-    button.addEventListener('click', event => {
-        event.preventDefault();
-        tally(selectedProduct, button.value);
-        renderProducts();
-    });
-}
-
-function tally(products, id) {
-    if(products[id]) {
-        products[id] += 1;
-    }
-    else {
-        products[id] = 1;
-    }
-}
+let turns = 0;
 
 function renderProducts() {
     let productSet = masterProductSet;
+
+    if(turns >= 25) {
+        buttonContainer.classList.add('hidden');
+        resultButton.classList.remove('hidden');
+    }
+
     
     if(selectedProduct && masterProductSet.list.length > 3) {
         productSet = new ProductSet(masterProductSet.list);
@@ -36,14 +26,14 @@ function renderProducts() {
     }
     
     productToDisplay = [];
-
+    
     // generate 3 random product imgs to display
     for(let i = 0; i < 3; i++) {
         let renderProduct = productSet.getRandomProduct();
+        renderProduct.id;
         productToDisplay.push(renderProduct);
-        tally(displayedProducts, renderProduct.id);
-        productSet.removeById(renderProduct.id);
-    
+        productSet.removeById(renderProduct.id); 
+        
         // displaying image
         let button = productButton[i];
         button.value = renderProduct.id;
@@ -53,20 +43,13 @@ function renderProducts() {
     }
 }
 
-// leftButton.addEventListener('click', event => {
-//     event.preventDefault();
-//     console.log('Left Button Clicked!');
-// });
-
-// centerButton.addEventListener('click', event => {
-//     event.preventDefault();
-//     console.log('Center Button Clicked!');
-// });
-
-// rightButton.addEventListener('click', event => {
-//     event.preventDefault();
-//     console.log('Right Button Clicked!');
-// });
-
+// add event listener to buttons....
+for(let button of productButton){
+    button.addEventListener('click', event => {
+        event.preventDefault();
+        turns++;
+        renderProducts();
+    });
+}
 
 renderProducts();
