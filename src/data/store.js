@@ -20,7 +20,8 @@ const store = {
             products = productData;
         }
         return products;
-    }
+    },
+    
 
 };
 
