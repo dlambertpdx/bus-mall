@@ -70,6 +70,11 @@ const products = [
         image: 'assets/products/shark.jpg'
     },
     {
+        id: 'sweep',
+        name: 'Baby Sweeper',
+        image: 'assets/products/sweep.png'
+    },
+    {
         id: 'tauntaun',
         name: 'Tauntaun Sleeping Bag',
         image: 'assets/products/tauntaun.jpg'

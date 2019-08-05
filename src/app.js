@@ -1,9 +1,13 @@
 import store from '../src/data/store.js';
 import ProductSet from './product-set.js';
+import { resultChart } from './results.js';
 
 const productButton = document.querySelectorAll('.product-button');
 const buttonContainer = document.getElementById('product-options');
 const resultButton = document.getElementById('result-button');
+const resultsContainer = document.getElementById('results-container');
+const resetButton = document.getElementById('reset-button');
+const chart = document.getElementById('myChart');
 
 const products = store.getProducts();
 let masterProductSet = new ProductSet(products);
@@ -14,7 +18,7 @@ let turns = 0;
 function renderProducts() {
     let productSet = masterProductSet;
 
-    if(turns >= 25) {
+    if(turns >= 10) {
         buttonContainer.classList.add('hidden');
         resultButton.classList.remove('hidden');
     }
@@ -47,15 +51,28 @@ function renderProducts() {
 for(let button of productButton) {
     button.addEventListener('click', event => {
         event.preventDefault();
+        let id = event.currentTarget.value;
+        store.selectedProduct(id);
         turns++;
         renderProducts();
+        // eslint-disable-next-line no-console
+        console.log(id);
     });
 }
 
 resultButton.addEventListener('click', event => {
     event.preventDefault();
-    window.location.assign('/results.html');
+    resultChart();
+    resultButton.classList.add('hidden');
+    chart.classList.remove('hidden');
+    resultsContainer.classList.remove('hidden');
+    return;
+});
 
+resetButton.addEventListener('click', event => {
+    event.preventDefault();
+    localStorage.clear();
+    window.location.reload();
 });
 
 renderProducts();
