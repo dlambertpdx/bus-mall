@@ -18,7 +18,7 @@ let turns = 0;
 function renderProducts() {
     let productSet = masterProductSet;
 
-    if(turns >= 10) {
+    if(turns >= 25) {
         buttonContainer.classList.add('hidden');
         resultButton.classList.remove('hidden');
     }
