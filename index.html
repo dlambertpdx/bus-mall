@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BusMall</title>
+    <link rel="stylesheet" href="/src/main.css">
+    <link rel="stylesheet" href="/src/busmall.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="relief">BusMall</h1>
+    </header>
+
+    <main id="products">
+        <section>
+            <div id="product-options">
+                <button id="left-button" class="product-button" name="product" value=""><img class="product-image"
+                        src=""></button>
+                <button id="center-button" class="product-button" name="product" value=""><img class="product-image"
+                        src=""></button>
+                <button id="right-button" class="product-button" name="product" value=""><img class="product-image"
+                        src=""></button>
+            </div>
+        </section>
+        <section class="hidden" id="result-button">
+            <h2>Thank you for participating!</h2>
+            <button class="result-button">View Results</button>
+        </section>
+        <canvas id="myChart" class="hidden"></canvas>
+        <div class="hidden" id="results-container">
+            <h2>Results</h2>
+            <button id="reset-button">Take Survey Again</button>
+        </div>
+
+
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="/src/app.js" type="module"></script>
+</body>
+
+</html>

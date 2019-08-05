@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline|Faster+One|Londrina+Shadow|Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Blinker&display=swap');
+
+body {
+    background-image: url('/assets/busMall.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 900px;
+    max-height: 100%;
+    margin: 0 auto;
+    font-family: 'Blinker', sans-serif;
+
+}
+
+h1 {
+    font-family: 'Bungee Outline', cursive;
+    text-align: center;
+    font-size: 5rem;
+    color: darkkhaki;
+    text-shadow: 0px 2px 2px rgba(7, 7, 7, 0.4); 
+}
+
+a {
+    font-family: 'Blinker', sans-serif;
+    text-decoration: none;
+    font-size: 1.25em;
+    text-shadow: 0px 1px 1px rgba(7, 7, 7, 0.4); 
+}
+
+a:hover {
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: wheat;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#result-button {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid darkkhaki;
+    object-fit: cover;
+    box-shadow: 0px 2px 2px rgba(7, 7, 7, 0.4);
+}  
+
+#myChart {
+    width: 600;
+    height: 600;
+}
+
+button.product-button {
+    border-width: 0;
+    background:none;
+    border-color: none;
+    border-style: none;
+}
+
+button.result-button {
+    background: none;
+    height: 250px;
+    width: 250px;
+    background: rgba();
+    border: 3px solid darkkhaki;
+    border-radius: 50%;
+    color: darkkhaki;
+    font-weight: bold;
+    font-size: 1.5em;
+    box-shadow: 0px 2px 2px rgba(7, 7, 7, 0.4);
+}
+
+button.result-button:hover {
+    width: 260px;
+    height: 260px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.product-button:hover, 
+.product-image:hover {
+    width: 260px;
+    height: 260px;
+}
